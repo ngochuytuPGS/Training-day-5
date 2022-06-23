@@ -1,0 +1,87 @@
+.page__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 50px 0;
+
+  .buttons {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .photos {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.photo {
+  display: flex;
+
+  &__details {
+    padding: 20px;
+    flex-grow: 1;
+
+    label:hover {
+      outline: 2px solid black;
+    }
+  }
+
+  &__input {
+    width: 100%;
+  }
+}
+
+.photo--grey {
+  background-color: grey;
+}
+
+.photo--white {
+  background-color: white;
+}
+
+.photo-skeleton{
+  background-color: rgb(49, 44, 44);
+  display: flex;
+  align-items: center;
+  height: 150px;
+  
+
+  &__image{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(112, 111, 111);
+    // border-radius: 50%;
+    animation: loadingAnimation .5s infinite alternate;
+  }
+  
+  &__details {
+    align-self: flex-start;
+    width: 75%;
+    padding: 20px;
+
+    & > div{
+      height: 10px;
+      background-color: rgb(112, 111, 111);
+      border-radius: 5px;
+      animation: loadingAnimation .5s infinite alternate;
+      margin-bottom: 15px;
+    }
+  }
+  
+  
+}
+
+@keyframes loadingAnimation {
+  from{
+    filter: brightness(1);
+  }
+
+  to{
+    filter: brightness(1.2);
+  }
+}

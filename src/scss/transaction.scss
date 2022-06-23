@@ -1,0 +1,211 @@
+$colorPrimary: rgb(2, 53, 88);
+$tableColumns: 7;
+
+.transaction__table {
+  background-color: rgb(245, 247, 251);
+  color: $colorPrimary;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.table__filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.filter__options {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  select,
+  input {
+    text-overflow: ellipsis;
+    color: inherit;
+    width: calc(100% / 5);
+    height: 40px;
+    padding: 0 7.5px;
+    border-radius: 7.5px;
+    border: none;
+    outline: 1px solid $colorPrimary;
+
+    &::placeholder {
+      color: inherit;
+    }
+  }
+
+  select {
+    border-right: 7.5px solid transparent;
+  }
+}
+
+.transaction__button {
+  background-color: transparent;
+  height: 40px;
+  width: calc(100% / 2);
+  padding: 0 20px;
+  border: none;
+  border-radius: 7.5px;
+  outline: 1px solid var(--color);
+  color: var(--color);
+  
+  &:focus:not(:focus-visible) {
+    outline: 1px solid var(--color);
+  }
+}
+
+.transaction__button.positive{
+  --color: rgb(56, 178, 226);
+}
+
+.transaction__button.negative{
+  --color: rgb(253, 67, 131);
+}
+
+.filter__buttons {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+}
+
+.table__body {
+  flex: 1;
+}
+
+.table__header,
+.table__row {
+  display: grid;
+  grid-template-columns: repeat($tableColumns - 1, 1fr) 0.25fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.table__content {
+  margin: 10px 0 20px 0;
+}
+
+.table__row {
+  background: white;
+  padding: 10px 0;
+
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+
+  & > * {
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  button {
+    color: inherit;
+    background-color: transparent;
+    width: 75%;
+    padding: 5px;
+    border: 1px solid $colorPrimary;
+    border-radius: 999px;
+  }
+
+  svg {
+    width: 20px;
+    fill: rgb(253, 67, 131);
+  }
+}
+
+.table__paging {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  * {
+    margin: 0;
+  }
+
+  .paging__buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .paging__button {
+    font-weight: 700;
+    color: rgb(56, 178, 226);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .paging__button.active,
+  .paging__button:hover {
+    background-color: rgb(56, 178, 226);
+    color: white;
+  }
+}
+
+.payroll__modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.payroll__modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: initial;
+
+  .modal__heading{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .input__group {
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  label {
+    min-width: 100px;
+  }
+
+  input {
+    text-overflow: ellipsis;
+    color: inherit;
+    height: 40px;
+    padding: 0 7.5px;
+    border-radius: 7.5px;
+    border: none;
+    outline: 1px solid $colorPrimary;
+
+    &::placeholder {
+      color: inherit;
+    }
+  }
+}
