@@ -119,6 +119,22 @@ $tableColumns: 7;
     width: 20px;
     fill: rgb(253, 67, 131);
   }
+
+  .status.processing{
+    color: orange;
+  }
+  .status.fulfilled{
+    color: lightgreen;
+  }
+  .status.pending{
+    color: blue;
+  }
+  .status.cancelled{
+    color: red;
+  }
+  .status.received{
+    color: aqua
+  }
 }
 
 .table__paging {

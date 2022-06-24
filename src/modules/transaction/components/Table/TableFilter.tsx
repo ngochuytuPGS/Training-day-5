@@ -59,15 +59,13 @@ const TableFilter = ({ setLocalPayrolls }: Props) => {
   );
 
   const onResetFilter = () => {
-    if (filter.status || filter.dateFrom || filter.dateTo || filter.invoice) {
-      setFilter({
-        status: '',
-        dateFrom: '',
-        dateTo: '',
-        invoice: '',
-      });
-      setLocalPayrolls([...payrolls]);
-    }
+    setFilter({
+      status: '',
+      dateFrom: '',
+      dateTo: '',
+      invoice: '',
+    });
+    setLocalPayrolls([...payrolls]);
   };
 
   return (

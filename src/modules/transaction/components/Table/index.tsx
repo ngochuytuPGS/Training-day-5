@@ -32,7 +32,7 @@ const Table = (props: Props) => {
     <div className="transaction__table">
       <TableHeader />
       <TableFilter setLocalPayrolls={setLocalPayrolls} />
-      <TableContent localPayrolls={localPayrolls} setLocalPayrolls={setLocalPayrolls} pagination={pagination} />
+      <TableContent localPayrolls={localPayrolls} pagination={pagination} />
       <TablePaging localPayrolls={localPayrolls} pagination={pagination} setPagination={setPagination} />
     </div>
   );

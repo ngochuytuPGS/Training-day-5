@@ -15,7 +15,7 @@ interface Props {
 const TableRow = ({ id, status, date, currency, total, invoice, setOpenModal }: Props) => {
   return (
     <div className="table__row">
-      <p>{status}</p>
+      <p className={`status ${status.toLowerCase()}`}>{status}</p>
       <p>{date}</p>
       <p>{currency}</p>
       <p>{total}</p>

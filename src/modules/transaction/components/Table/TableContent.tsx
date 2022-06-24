@@ -7,7 +7,6 @@ import TableRow from './TableRow';
 
 interface Props {
   localPayrolls: IPayroll[];
-  setLocalPayrolls: React.Dispatch<React.SetStateAction<IPayroll[]>>;
   pagination: IPagination;
 }
 
@@ -55,9 +54,8 @@ export const getPayrollDate = (payroll: IPayroll): string => {
   }
 };
 
-const TableContent = ({ localPayrolls, setLocalPayrolls, pagination }: Props) => {
+const TableContent = ({ localPayrolls, pagination }: Props) => {
   const [openModal, setOpenModal] = useState<OpenModal | CloseModal>({ isOpen: false });
-  const { type, id } = openModal as OpenModal;
   const { currency, date, total } = openModal as UpdateModalProps;
 
   const payrollsByPage = localPayrolls.filter(
